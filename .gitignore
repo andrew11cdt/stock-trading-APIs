@@ -1,0 +1,4 @@
+#ignore node_modules directory
+node_modules/
+./config.js
+./stock-apis.postman_collection.json

@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "04d8f29a-0c5b-4c40-a7b9-3e9a4b532c1a",
+		"name": "stock-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"judy\",\n    \"password\":\"123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:81/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"judy\",\n\t\"password\": \"123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:81/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Portfolio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:81/api/user/605f883b9bf5a535bfd6e6d4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"user",
+						"605f883b9bf5a535bfd6e6d4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create wallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MDVmODgzYjliZjVhNTM1YmZkNmU2ZDQiLCJpYXQiOjE2MTY4NzM1NDEsImV4cCI6MTYxNjk1OTk0MX0.4wtrdn0alnwXl7y_B9PndGVS77V7DsvHUWKTmICbliw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"wallet_type\": \"stock\",\n\t\"user_id\": \"605f883b9bf5a535bfd6e6d4\",\n\t\"symbol\": \"TSLA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:81/api/wallet/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"wallet",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit wallet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MDVmODgzYjliZjVhNTM1YmZkNmU2ZDQiLCJpYXQiOjE2MTY4NzM1NDEsImV4cCI6MTYxNjk1OTk0MX0.4wtrdn0alnwXl7y_B9PndGVS77V7DsvHUWKTmICbliw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"wallet_type\": \"stock\",\n\t\"stock_id\": \"605fef3974fb02796d91cf05\",\n\t\"quantity\": \"100\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:81/api/wallet/deposit/605fef3a74fb02796d91cf06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"wallet",
+						"deposit",
+						"605fef3a74fb02796d91cf06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sell",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MDVmODgzYjliZjVhNTM1YmZkNmU2ZDQiLCJpYXQiOjE2MTY4NzM1NDEsImV4cCI6MTYxNjk1OTk0MX0.4wtrdn0alnwXl7y_B9PndGVS77V7DsvHUWKTmICbliw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"wallet_id\": \"605fef3a74fb02796d91cf06\",\n    \"order_type\": \"SELL\",\n    \"quantity\": 50,\n    \"price\": 2,\n    \"fiat_wallet_id\": \"605fd87cbb7a0b6b5876f745\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:81/api/stock/share/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"stock",
+						"share",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MDVmODgzYjliZjVhNTM1YmZkNmU2ZDQiLCJpYXQiOjE2MTY4NzM1NDEsImV4cCI6MTYxNjk1OTk0MX0.4wtrdn0alnwXl7y_B9PndGVS77V7DsvHUWKTmICbliw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"wallet_id\": \"605fef3a74fb02796d91cf06\",\r\n    \"order_type\": \"BUY\",\r\n    \"quantity\": 20,\r\n    \"price\": 2,\r\n    \"fiat_wallet_id\": \"605fd87cbb7a0b6b5876f745\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:81/api/stock/share/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "81",
+					"path": [
+						"api",
+						"stock",
+						"share",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
