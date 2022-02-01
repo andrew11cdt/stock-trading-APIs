@@ -1,5 +1,4 @@
 # STOCK TRADING BACKEND API
-- Github Repo: https://github.com/andrew11cdt/stock-trading
 ## HOW TO RUN
 ### 1. Set up environment
 - Run npm
