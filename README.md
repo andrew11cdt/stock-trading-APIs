@@ -1,10 +1,22 @@
 # STOCK TRADING BACKEND API
-- Github Repo: https://github.com/andrew11cdt/stock-trading
 ## HOW TO RUN
 ### 1. Set up environment
-- Run npm
+* Install [the lastest NodeJs](https://nodejs.org/en/)
+* Install [nodemon](https://github.com/remy/nodemon)
+* Run npm
 ``` 
 npm install
+```
+* Setup [Cloud Mongodb](mongodb.com) and create moongoose config.js in main directory folder:
+```
+let HOST = process.env.HOST || "localhost";
+let PORT = process.env.PORT || 81;
+module.exports={
+    MONGO_URI: "YOUR MONGODB URI",
+    secretString: 'DB ACCESS KEY',
+    HOST,
+    PORT}
+    
 ```
 ### 2. Run server
 ```
